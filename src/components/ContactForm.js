@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
 const ContactForm = () =>{
+    
     const [state, setState] = useState({
         name: '',
         email: '',
@@ -8,9 +10,20 @@ const ContactForm = () =>{
         message: ''
     });
 
+    const [result, setResult] = useState(null);
+
     const sendEmail = event => {
         event.preventDefault();
         console.log('sendEmail')
+        axios
+        .post('/send', { ...state })
+        .then(response => {
+            setResult(response.data);
+            setState({ name: '', email: '', subject: '', message: '' });
+        })
+        .catch(() => {
+            setResult({ success: false, message: 'Something went wrong. Try again later'})
+        });
     }
 
     const onInputChange = event => {
