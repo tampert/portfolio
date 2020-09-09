@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './routes/Home';
+import About from './routes/About';
+import Contact from './routes/Contact';
+import Dota from './routes/Dota';
+import NotFound from './routes/NotFound.js'
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
+        <Route path="/dota" exact component={Dota} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
+    </Router>
   );
 }
+
+
+// const Interests = () => {
+//   return (
+//     <div className='route'>Interest route</div>
+//   )
+// }
+
 
 export default App;
