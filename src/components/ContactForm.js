@@ -14,16 +14,14 @@ const ContactForm = () =>{
 
     const sendEmail = event => {
         event.preventDefault();
+        console.log('sendEmail')
         axios
         .post('/send', { ...state })
         .then(response => {
             setResult(response.data);
-            console.log('sendEmail then')
-            console.log(result)
             setState({ name: '', email: '', subject: '', message: '' });
         })
         .catch(() => {
-            console.log('sendEmail catch')
             setResult({ success: false, message: 'Something went wrong. Try again later'})
         });
     }
@@ -40,49 +38,51 @@ const ContactForm = () =>{
 
     return(
         <div>
+            <h3>Contact form</h3>
             {result && (
             <p className={`${result.success ? 'success' : 'error'}`}>
             {result.message}
             </p>
             )}
-            <h3>Contact form</h3>
-            <div className="contact-form">
-            <form onSubmit={sendEmail}>
-                <label>Full Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={state.name}
-                    placeholder="Enter your full name"
-                    onChange={onInputChange}
-                />
-                <label>Email</label>
-                <input
-                    type="text"
-                    name="email"
-                    value={state.email}
-                    placeholder="Enter your email"
-                    onChange={onInputChange}
-                />
-                <label>Subject</label>
-                <input
-                    type="text"
-                    name="subject"
-                    value={state.subject}
-                    placeholder="Enter subject"
-                    onChange={onInputChange}
-                />
-                <label>Message</label>
-                <textarea
-                    as="textarea"
-                    name="message"
-                    value={state.message}
-                    rows="3"
-                    placeholder="Enter your message"
-                    onChange={onInputChange}
-                ></textarea>
-                <input type="submit" value="Submit" />
-            </form>
+            <div style={{padding:20}}>
+                <div className="contact-form">
+                <form onSubmit={sendEmail}>
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={state.name}
+                        placeholder="Enter your full name"
+                        onChange={onInputChange}
+                    />
+                    <label>Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={state.email}
+                        placeholder="Enter your email"
+                        onChange={onInputChange}
+                    />
+                    <label>Subject</label>
+                    <input
+                        type="text"
+                        name="subject"
+                        value={state.subject}
+                        placeholder="Enter subject"
+                        onChange={onInputChange}
+                    />
+                    <label>Message</label>
+                    <textarea
+                        as="textarea"
+                        name="message"
+                        value={state.message}
+                        rows="3"
+                        placeholder="Enter your message"
+                        onChange={onInputChange}
+                    ></textarea>
+                    <input type="submit" value="Submit" />
+                </form>
+                </div>
             </div>
         </div>
     )
