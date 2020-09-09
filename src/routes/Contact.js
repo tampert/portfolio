@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from '../components/ContactForm'
 
 const Contact = () => {
     return (
@@ -10,6 +11,7 @@ const Contact = () => {
               <li>Facebook</li>
               <li>form</li>
           </ul>
+        <ContactForm /> 
       </div>
     )
 }
