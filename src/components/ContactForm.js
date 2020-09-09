@@ -14,14 +14,16 @@ const ContactForm = () =>{
 
     const sendEmail = event => {
         event.preventDefault();
-        console.log('sendEmail')
         axios
         .post('/send', { ...state })
         .then(response => {
             setResult(response.data);
+            console.log('sendEmail then')
+            console.log(result)
             setState({ name: '', email: '', subject: '', message: '' });
         })
         .catch(() => {
+            console.log('sendEmail catch')
             setResult({ success: false, message: 'Something went wrong. Try again later'})
         });
     }
@@ -38,6 +40,11 @@ const ContactForm = () =>{
 
     return(
         <div>
+            {result && (
+            <p className={`${result.success ? 'success' : 'error'}`}>
+            {result.message}
+            </p>
+            )}
             <h3>Contact form</h3>
             <div className="contact-form">
             <form onSubmit={sendEmail}>
