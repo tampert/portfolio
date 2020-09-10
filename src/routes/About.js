@@ -7,7 +7,8 @@ const About = () => {
     let difdays = dif/(1000 * 3600 * 24);
     let difYears = Math.floor(difdays/365);
     return (
-      <div className='route'>
+      <div className='route about'>
+          <div className="about-content">
           <h3>About me</h3>
           <ul>
               <li>Name: Dirk Soentjens</li>
@@ -34,6 +35,11 @@ const About = () => {
               <li>Sports</li>
               <li>Music</li>
           </ul>
+          </div>
+          <div className="profile-img">
+            <h3>&nbsp;</h3>
+            <img src='./images/dsoentjens_Profil_Bild_small.jpg' width='300' height='280' alt='profile'/>
+          </div>
       </div>
     )
 }

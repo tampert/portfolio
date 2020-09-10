@@ -1,47 +1,116 @@
-
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-nav{
+.nav-bar{
   font-variant: small-caps;
   display:flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
-  background:grey;
-}
-nav a {
-  text-decoration:none;
-}
-nav a:link {
-  color: black;
-}
-nav a:visited {
-  color: black;
+  background:#333333;
+  color:#ffff;
 }
 
-.nav-links{
-  width:50%;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.brand-title{
+  font-size: 1.5rem;
+  margin: .5rem;
 }
+
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction:column;
+  justify-content:space-between;
+  width:32px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width:100%;
+  background-color: white;
+  border-radius:10px;
+
+}
+
+@media (max-width: 600px){
+  .toggle-button{
+    display:flex;
+  }
+  .nav-links{
+    display:none;
+    width:100%;
+  }
+  .nav-bar{
+    flex-direction: column;
+    align-items:flex-start;
+  }
+
+  .nav-links ul{
+    width:100%;
+    flex-direction:column;
+  }
+  .nav-links li{
+    text-align:center;
+  }
+  .nav-links li a{
+    padding: .5rem 1rem;
+  }
+  .nav-links.active{
+    display:flex; 
+  }
+}
+
+.nav-links ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.nav-links li{
+  list-style:none;
+}
+.brand-title a,
+.nav-links li a{
+  text-decoration:none;
+  color: #ffffff;
+}
+.nav-links li a{
+  padding:1rem;
+  display: block;
+}
+
+.nav-links li a:link {
+  color: #ffffff;
+}
+.nav-links li a:visited {
+  color: #ffffff;
+} 
+
+
+.nav-links li:hover{
+  background:red;
+}
+
+
 .route{
-  min-height: 90vh;
+  /* min-height: 90vh; */
+  /* display:flex;
+  justify-content: space-around;
+  align-items: center; */
+}
+.about{
   display:flex;
-  flex-direction: column ;
+  justify-content: space-around;
+  align-items: columns; 
+}
+.profile-img{
+  /* display:flex;
+  justify-content: space-around;
+  align-items: columns; */
+}
+
+.about-content{
+  /* display:flex;
+  justify-content: space-around;
+  align-items: columns; */
 }
 
 .route ul{
