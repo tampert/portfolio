@@ -19,23 +19,23 @@ app.post('/send', (req, res) => {
     };
 
     // send succes true since we haven't set up an email adress YET in the transporter
-    res.send({
-            success: true,
-            message: 'send succes true since we have not set up an email adress YET in the transporter'
-    });
-    // transporter.sendMail(mailOptions, function(err, info) {
-    //   if (err) {
-    //     res.status(500).send({
-    //       success: false,
-    //       message: 'Something went wrong. Try again laterrrrrr'
-    //     });
-    //   } else {
-    //     res.send({
-    //       success: true,
-    //       message: 'Thanks for contacting us. We will get back to you shortly'
-    //     });
-    //   }
+    // res.send({
+    //         success: true,
+    //         message: 'send succes true since we have not set up an email adress YET in the transporter'
     // });
+    transporter.sendMail(mailOptions, function(err, info) {
+      if (err) {
+        res.status(500).send({
+          success: false,
+          message: 'Something went wrong. Try again laterrrrrr'
+        });
+      } else {
+        res.send({
+          success: true,
+          message: 'Thanks for contacting us. We will get back to you shortly'
+        });
+      }
+    });
   } catch (error) {
     res.status(500).send({
       success: false,

@@ -44,7 +44,7 @@ const ContactForm = () =>{
             {result.message}
             </p>
             )}
-            <div style={{padding:20}}>
+            <div>
                 <div className="contact-form">
                 <form onSubmit={sendEmail}>
                     <label>Full Name</label>

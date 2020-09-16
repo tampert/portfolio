@@ -91,7 +91,8 @@
 
 
 .route{
-  /* min-height: 90vh; */
+  min-height: 90vh;
+  margin:.5rem
   /* display:flex;
   justify-content: space-around;
   align-items: center; */
@@ -137,6 +138,14 @@
   align-items: center;
 }
 
+.contact-social li{
+  display:inline;
+  margin: .5rem;
+} 
+
+.social-icon:hover{
+  fill:red;
+}
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -171,6 +180,7 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
 
 .success{
   color: green;
