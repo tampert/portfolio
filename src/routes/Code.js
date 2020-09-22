@@ -31,6 +31,7 @@ const Code = () => {
 
   const handleSortName = () => {
     console.log('sort on Name')
+    
   }
 
   const handleSortAge = () => {
