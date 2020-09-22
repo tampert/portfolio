@@ -108,12 +108,6 @@
   align-items: columns; */
 }
 
-.about-content{
-  /* display:flex;
-  justify-content: space-around;
-  align-items: columns; */
-}
-
 .route ul{
   list-style: none;
   font-variant: small-caps;

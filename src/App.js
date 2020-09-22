@@ -6,6 +6,7 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Contact from './routes/Contact';
 import Dota from './routes/Dota';
+import Code from './routes/Code';
 import NotFound from './routes/NotFound.js'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/dota" exact component={Dota} />
+        <Route path="/code" exact component={Code} />
         <Route component={NotFound} />
       </Switch>
     </div>

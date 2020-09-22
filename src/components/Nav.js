@@ -33,6 +33,9 @@ const Nav = () => {
                     <li>
                         <Link to='/dota'>video games</Link>
                     </li>
+                    <li>
+                        <Link to='/code'>javascript code</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
