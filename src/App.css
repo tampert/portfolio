@@ -89,7 +89,6 @@
   background:red;
 }
 
-
 .route{
   min-height: 90vh;
   margin:.5rem
@@ -182,4 +181,8 @@ input[type=submit]:hover {
 
 .error{
   color: red;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
