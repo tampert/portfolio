@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { Row, Col } from 'react-bootstrap';
 import Hero from './Hero';
 
 const Dota = () => {
@@ -16,11 +17,15 @@ const Dota = () => {
     }
   
     return (
-      <div className='route heros'>{heros.map((hero,index) =>{
-        return (
-        <Hero key={index} name={hero.localized_name} image={hero.img}></Hero>
-        )
-      })}</div>
+      <Row>
+        <Col className="heros">
+        {heros.map((hero,index) =>{
+          return (
+          <Hero key={index} name={hero.localized_name} image={hero.img}></Hero>
+          )
+        })}
+        </Col>
+      </Row>
     )
   }
   export default Dota;

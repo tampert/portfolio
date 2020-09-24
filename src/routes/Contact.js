@@ -1,10 +1,12 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm'
+import ContactForm from '../components/ContactForm';
+import { Row, Col } from 'react-bootstrap';
 
 const Contact = () => {
     return (
-      <div className='route'>
-        <h3>Contact me</h3>
+        <Row>
+          <Col>
+          <h3>Contact me</h3>
           <ul className="contact-social">
               <li>
                 <a href='https://www.linkedin.com/in/dirk-soentjens/'>
@@ -27,8 +29,9 @@ const Contact = () => {
                 </a>
               </li>
           </ul>
-        <ContactForm /> 
-      </div>
+          <ContactForm /> 
+          </Col>
+        </Row>
     )
 }
 

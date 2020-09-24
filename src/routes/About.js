@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const About = () => {
     let geboren = new Date('10/20/1978');
@@ -7,7 +8,8 @@ const About = () => {
     let difdays = dif/(1000 * 3600 * 24);
     let difYears = Math.floor(difdays/365);
     return (
-      <div className='route about'>
+        <Row>
+            <Col>
           {/* <div className="profile-img">
             <img src='./images/dsoentjens_Profil_Bild_small.jpg' width='300' height='280' alt='profile'/>
           </div> */}
@@ -66,7 +68,8 @@ const About = () => {
               <li>Music</li>
           </ul>
           </div>
-      </div>
+          </Col>
+        </Row>
     )
 }
 

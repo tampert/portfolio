@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import Nav from './components/Nav';
+import BootstrapNav from './components/BootstrapNav';
+// import BootstrapFooter from './components/BootstrapFooter';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap'
 import Home from './routes/Home';
 import About from './routes/About';
 import Contact from './routes/Contact';
@@ -11,19 +13,25 @@ import NotFound from './routes/NotFound.js'
 
 function App() {
   return (
+    <>
     <Router>
     <div className="App">
-      <Nav />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/dota" exact component={Dota} />
-        <Route path="/code" exact component={Code} />
-        <Route component={NotFound} />
-      </Switch>
+      <BootstrapNav />
+      <Container fluid>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/dota" exact component={Dota} />
+          <Route path="/code" exact component={Code} />
+          <Route component={NotFound} />
+        </Switch>
+      </Container>
+     
     </div>
+    {/* <BootstrapFooter /> */}
     </Router>
+    </>
   );
 }
 

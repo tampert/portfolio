@@ -1,10 +1,13 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const Home = () => {
     return (
-      <div className='route'>
-          home bb
-      </div>
+      <Row>
+        <Col>
+        home bb
+        </Col>
+      </Row>
     )
 }
 
