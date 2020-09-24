@@ -3,8 +3,6 @@ import '../App.css'
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
-    
-
     const toggle = () =>{
         let navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('active')

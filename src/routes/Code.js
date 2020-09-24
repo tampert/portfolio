@@ -40,6 +40,10 @@ const Code = () => {
 
   const onChangeHandle = ({target}) => {
     console.log(`filter based on ${target.value}`)
+    if(target.value === ""){
+      SetFiltered([]);
+      return;
+    }
     // https://stackoverflow.com/questions/42035717/js-filter-object-array-for-partial-matches
     const filter = [...people].filter((person) =>{
       return person.name.toLowerCase().includes(target.value.toLowerCase())
