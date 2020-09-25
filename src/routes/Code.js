@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const DEFAULT_DATA = [{
   id: 1,
@@ -51,8 +52,10 @@ const Code = () => {
     SetFiltered(filter);
   }
     return (
-      <div className='route'>
-          <p>Here is try to show some javascript array function examples</p>
+      <>
+      <Row>
+        <Col>
+        <p>Here is try to show some javascript array function examples</p>
           <ul>
             <li>map</li>
             <li>sort</li>
@@ -60,13 +63,38 @@ const Code = () => {
             <li>forEach</li>
             <li>find</li>
           </ul>
-          <input type="text" onChange={onChangeHandle} />
-          { filtered.map((p,i) => {
-            return (
-              <p key={i}>{p.name}</p>
-            )
-          })}
-         
+          </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div className="form-group row">
+            <label for="searchid" className="col-sm-2 col-form-label">Search</label>
+            <div class="col-sm-10">
+              <input type="text" className="form-control" id="searchid" aria-describedby="searchHelp" placeholder="Enter search term" onChange={onChangeHandle} />
+              <small id="searchHelp" className="form-text text-muted">Search and show result based on Ternary operator in React</small>
+            </div>
+          </div>
+          { filtered.length > 0  ? ( 
+          <table>
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>age</th>
+              </tr>
+            </thead>
+            <tbody>
+            { filtered.map((person,i) => {
+              return (
+              <tr key={person.id}>
+                <td>{person.name}</td>
+                <td>{person.age}</td>
+              </tr>
+              )
+            })}
+          </tbody></table>): null }
+          </Col>
+          <Col>
+          <h4>data table</h4>
           <table>
             <thead>
               <tr>
@@ -87,7 +115,9 @@ const Code = () => {
           </table>
           <button onClick={handleSort} data-sort="name">sort on name</button>
           <button onClick={handleSort} data-sort="age">sort on age</button>
-      </div>
+          </Col>
+      </Row>
+      </>
     )
 }
 
