@@ -68,8 +68,8 @@ const Code = () => {
       <Row>
         <Col>
           <div className="form-group row">
-            <label for="searchid" className="col-sm-2 col-form-label">Search</label>
-            <div class="col-sm-10">
+            <label htmlFor="searchid" className="col-sm-2 col-form-label">Search</label>
+            <div className="col-sm-10">
               <input type="text" className="form-control" id="searchid" aria-describedby="searchHelp" placeholder="Enter search term" onChange={onChangeHandle} />
               <small id="searchHelp" className="form-text text-muted">Search and show result based on Ternary operator in React</small>
             </div>
