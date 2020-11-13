@@ -32,7 +32,6 @@ const Code = () => {
   const [filtered, SetFiltered] = useState([])
 
   const handleSort = ({target}) => {
-    console.log(`sort on ${target.dataset.sort}`)
     const sorted = [...people].sort((a, b) => {
       return a[target.dataset.sort] > b[target.dataset.sort] ? 1 : -1;
     });
@@ -40,7 +39,6 @@ const Code = () => {
   }
 
   const onChangeHandle = ({target}) => {
-    console.log(`filter based on ${target.value}`)
     if(target.value === ""){
       SetFiltered([]);
       return;
